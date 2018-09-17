@@ -338,7 +338,7 @@ class AuthorCreateViewTest(TestCase):
         
     def test_redirects_to_detail_view_on_success(self):
         login = self.client.login(username='testuser2', password='12345')
-        resp = self.client.post(reverse('author_create'),{'first_name':'Christian Name','last_name':'Surname',} )
+        resp = self.client.post(reverse('author_create'),{'first_name':'Christian Namee','last_name':'Surname',} )
         #Manually check redirect because we don't know what author was created
         self.assertEqual( resp.status_code,302)
         self.assertTrue( resp.url.startswith('/catalog/author/') )
