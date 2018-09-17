@@ -340,5 +340,6 @@ class AuthorCreateViewTest(TestCase):
         login = self.client.login(username='testuser2', password='12345')
         resp = self.client.post(reverse('author_create'),{'first_name':'Christian Namee','last_name':'Surname',} )
         #Manually check redirect because we don't know what author was created
-        self.assertEqual( resp.status_code,302)
+        self.assertEqual( resp.status_code,309)
+        #self.assertEqual( resp.status_code,302)
         self.assertTrue( resp.url.startswith('/catalog/author/') )
